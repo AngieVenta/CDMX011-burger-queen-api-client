@@ -1,7 +1,7 @@
 import React from 'react';
-import './style/Style.css';;
+import './style/Style.css';
 
-function OrderData({orderProducts , removeProduct, lessProduct}) {  
+function OrderData({orderProducts , removeProduct, lessProduct, handleChange}) {  
 
     return (
         <div id="OrderData">
@@ -13,13 +13,18 @@ function OrderData({orderProducts , removeProduct, lessProduct}) {
                 <input 
                 id= 'client-name'
                 type='text'
+                name = 'client'
                 placeholder='Escribe el nombre del cliente'
+                onChange= {handleChange}
+                required
                 ></input>
                 <label htmlFor= 'tableName'>Mesa: </label>
                 <select 
                 id = 'table-name'
                 autoComplete= 'off'
                 name= 'table'
+                onChange = {handleChange}
+                required
                 >
                     <option disabled> Selecciona la mesa del cliente</option>
                     <option value= '01'>01</option>
@@ -32,36 +37,39 @@ function OrderData({orderProducts , removeProduct, lessProduct}) {
                     <option value= '08'>08</option>
                 </select>
             </div>
-            <div className= 'orderTitles'>
-                <span>Producto</span>
-                <span>Cant.</span>
-                <span>Precio</span>
-            </div>
-            <div className='orderProducts'>
+            <table className="tableOrder">
+            <tbody>
+            <tr className= 'orderTitles'>
+                <th>Producto</th>
+                <th>Cant.</th>
+                <th>Precio</th>
+            </tr>
                 {orderProducts.map(elem => (
-                    <div key= {elem.id}>
-                        <button onClick= {() => removeProduct(elem)} className="btnRemove"> 
+                    <tr key= {elem.id}>
+                        <td><button onClick= {() => removeProduct(elem)} className="btnRemove"> 
                             <img alt='borrar todo'
                             src= 'https://raw.githubusercontent.com/DianaAraujoG/La-Magia-de-Mexico/main/img-Burger-Queen/contenedor-de-basura.png'></img>
-                        </button>
-                        <span>
-                        <span> {elem.name} </span>
+                        </button>                       
+                        {elem.name} 
+                        </td>
+                        <td>
                         <button onClick = {() => lessProduct(elem)} className="btnLess">
                             <img alt= 'reducir cantidad de producto'
                             src= 'https://raw.githubusercontent.com/DianaAraujoG/La-Magia-de-Mexico/main/img-Burger-Queen/flecha-hacia-abajo.png'></img>
-                        </button>
-                        </span>
+                        </button>                        
                         <span>{elem.qty} </span>
-                        <span>${elem.price * elem.qty}</span>
-                    </div>
+                        </td>
+                        <td className="price">${elem.price * elem.qty}</td>
+                    </tr>
                 )) }
-            </div>
+                </tbody>
+            </table>
+            
             <div className= 'totalOrder'>
                 <h3>Total</h3>
                 {<h3> ${orderProducts.reduce((previousValue, currentValue) => previousValue + (currentValue.price * currentValue.qty), 0)}</h3>}
             </div>
         </div>
-        
     )
 }
 

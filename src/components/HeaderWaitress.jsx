@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../FirebaseConfig';
 import logo from "../assets/Burger-Queen-logo.png";
 import { signOut } from "firebase/auth";
@@ -21,12 +21,16 @@ const HeaderWaitress = () => {
             <div className="headerW">
                 <div className= 'logoheader'><img src= {logo} alt= 'logo BurgerQueen'></img></div>
                 <div className="btnsHeader">
-                    <button className='btnMenu'>
-                        <img src="https://raw.githubusercontent.com/DianaAraujoG/La-Magia-de-Mexico/main/img-Burger-Queen/menu_button.png" alt ='btnMenu'></img>
-                    </button>
-                    <button className='btnReady'>
-                        <img alt='btnReady' src="https://raw.githubusercontent.com/DianaAraujoG/La-Magia-de-Mexico/main/img-Burger-Queen/listo_button.png"></img>
-                    </button>
+                    <Link to = '/menu' className='changeRoute'>
+                        <button className='btnMenu'>
+                            <img src="https://raw.githubusercontent.com/DianaAraujoG/La-Magia-de-Mexico/main/img-Burger-Queen/menu_button.png" alt ='btnMenu'></img>
+                        </button>
+                    </Link>
+                    <Link to = '/orderToDeliver' className='changeRoute'>
+                        <button className='btnReady'>
+                            <img alt='btnReady' src="https://raw.githubusercontent.com/DianaAraujoG/La-Magia-de-Mexico/main/img-Burger-Queen/listo_button.png"></img>
+                        </button>
+                    </Link>
                 </div>
                 <button className='btnlogOut' onClick={logOut}>Salir</button>
             </div>

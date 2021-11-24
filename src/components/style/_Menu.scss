@@ -21,6 +21,7 @@
     flex-flow: column wrap;
     margin: 1vmin -2vmax 0 -2vmax;
     padding-left: 4vmax;
+    padding-right: 3vmax;
     min-height: 100vmin;
     max-height: auto;
     .menuElements{
@@ -47,7 +48,7 @@
     }
 }
 #listProduct{
-    width: 55%;
+    width: 52%;
     display: flex;
     flex-flow: column wrap;
     .product{

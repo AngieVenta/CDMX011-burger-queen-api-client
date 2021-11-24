@@ -6,6 +6,7 @@ import {
 import SignUp from './components/SingUp'
 import LogIn from './pages/LogIn/LogIn'
 import Menu from "./pages/menu/Menu";
+import OrderToDeliver from "./pages/ordersToDeliver/OrdersToDeliver";
 // import { auth } from './FirebaseConfig';
 
 // import { useNavigate } from 'react-router-dom';
@@ -34,6 +35,8 @@ function App() {
         <Route path='/' element={<LogIn/>} />
         <Route path='register' element={<SignUp/>} />
         <Route path='menu' element={<Menu/>} />
+        <Route path='orderToDeliver' element={<OrderToDeliver/>} />
+
        </Routes>
        </div>
     </Router>

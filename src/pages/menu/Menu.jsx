@@ -6,6 +6,7 @@ import '../../components/style/Style.css';
 import GetProducts from "../../components/products";
 import HeaderWaitress from "../../components/HeaderWaitress";
 import OrderData from "../../components/Order";
+import SendButton from '../../components/SendButton';
 
 //import { auth } from '../../FirebaseConfig';
 
@@ -14,6 +15,7 @@ function Menu (){
     const [products, setData] = useState(null);    
     const [currentMenu, setcurrentMenu] = useState('desayuno');
     const [orderProducts, setOrderProducts] = useState([]);
+    const [orderClient, setOrderClient] = useState({client: '', table: ''})
 
     useEffect(() => {
         fetch('http://localhost:8000/products')
@@ -29,7 +31,7 @@ function Menu (){
         return products.filter(data => data.type === currentMenu)
     }
     
-    const addProduct = (product => {
+    const addProduct = (product) => {
         const exist = orderProducts.find((elem) => elem.id === product.id);
 
         if(exist){
@@ -43,8 +45,8 @@ function Menu (){
                 [...orderProducts, { ...product,  qty: 1}]
             )
         }
-    })
-    const removeProduct = ( product => {
+    }
+    const removeProduct = (product) => {
         const exist = orderProducts.find((elem) => elem.id === product.id);
 
         if(exist){
@@ -52,8 +54,8 @@ function Menu (){
                 orderProducts.filter( elem => elem.id !== product.id)
             )
         }
-    })
-    const lessProduct = ( product => {
+    }
+    const lessProduct = (product) => {
         const exist = orderProducts.find((elem) => elem.id === product.id);
         
         if(exist && exist.qty > 1){
@@ -68,7 +70,15 @@ function Menu (){
                 orderProducts.filter( elem => elem.id !== product.id)
             )
           }
-    })
+    }
+    const handleChange = (event) => {
+        return setOrderClient(() => {
+            const dataValues = { ...orderClient };
+            dataValues[event.target.name] = event.target.value;
+            console.log(dataValues)
+            return dataValues     
+        })
+    }
 
     return(
         <Fragment>
@@ -76,18 +86,24 @@ function Menu (){
                 <HeaderWaitress></HeaderWaitress>
             </div>
             <div className="menu">
-            <div className="menuBtns">
-                <button className="menuBtn" onClick={() => setcurrentMenu('desayuno') }>Desayuno</button>
-                <button className="menuBtn" onClick={() => setcurrentMenu('almuerzo')}>Almuerzo y Cena</button> 
-            </div>
-            <div className="menuElements">
-                <div id="listProduct">
-                    { products && <GetProducts products= { menuSelector() } addProduct= { addProduct } /> }
+                <div className="menuBtns">
+                    <button className="menuBtn" onClick={() => setcurrentMenu('desayuno') }>Desayuno</button>
+                    <button className="menuBtn" onClick={() => setcurrentMenu('almuerzo')}>Almuerzo y Cena</button> 
                 </div>
-                <div className="billMenu">
-                    { <OrderData orderProducts = {orderProducts} removeProduct = { removeProduct } lessProduct = {lessProduct}></OrderData> }
+                <div className="menuElements">
+                    <div id="listProduct">
+                        { products && <GetProducts products= { menuSelector() } addProduct= { addProduct } /> }
+                    </div>
+                    <div className='billElements'>
+                        <div className="billMenu">
+                            { <OrderData orderProducts = { orderProducts } removeProduct = { removeProduct } 
+                            lessProduct = { lessProduct } handleChange= { handleChange }></OrderData> }                        
+                         <br/>  
+                         </div>                      
+                        { <SendButton client = {orderClient.client} table = {orderClient.table} products = {orderProducts} 
+                        setProducts= {setOrderProducts} setClient={setOrderClient}></SendButton>}     
+                    </div>                   
                 </div>
-            </div>
             </div>    
         </Fragment>
     )
