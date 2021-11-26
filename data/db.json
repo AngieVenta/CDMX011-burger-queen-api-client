@@ -139,7 +139,7 @@
           "qty": 1
         }
       ],
-      "status": "delivering",
+      "status": "pending",
       "dateEntry": "2021-11-25T02:31:39.489Z",
       "id": 3
     },
@@ -530,43 +530,6 @@
       "status": "delivering",
       "dateEntry": "2021-11-25T03:18:03.084Z",
       "id": 13
-    },
-    {
-      "userId": "luna@correo.com",
-      "client": "Luna",
-      "table": "04",
-      "products": [
-        {
-          "id": 11,
-          "name": "Bebida/ Gaseosa 750ml",
-          "price": 7,
-          "image": "https://raw.githubusercontent.com/DianaAraujoG/La-Magia-de-Mexico/main/img-Burger-Queen/reajuste-salarial.png",
-          "type": "almuerzo",
-          "dataEntry": "2021-11-16T12:25:43.511Z",
-          "qty": 1
-        },
-        {
-          "id": 6,
-          "name": "Papas fritas",
-          "price": 5,
-          "image": "https://raw.githubusercontent.com/DianaAraujoG/La-Magia-de-Mexico/main/img-Burger-Queen/french-fries.png",
-          "type": "almuerzo",
-          "dataEntry": "2021-11-16T12:25:43.511Z",
-          "qty": 2
-        },
-        {
-          "id": 5,
-          "name": "Hamburguesa doble",
-          "price": 15,
-          "image": "https://raw.githubusercontent.com/DianaAraujoG/La-Magia-de-Mexico/main/img-Burger-Queen/hamburguesa%20(2).png",
-          "type": "almuerzo",
-          "dataEntry": "2021-11-16T12:25:43.511Z",
-          "qty": 1
-        }
-      ],
-      "status": "pending",
-      "dateEntry": "2021-11-25T19:01:23.455Z",
-      "id": 14
     }
   ]
 }

@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import '../components/style/Style.css';
 
 function GetOrders({orders, changeStatus}){
@@ -15,26 +14,21 @@ function GetOrders({orders, changeStatus}){
     // }
 
     return (
-        <Fragment>
+        <div>
             {orders.map((elem) => {
-                const orderProducts = elem.products.map((product) => (<tr key= {product.id}><td>{product.name}</td> <td className="qtyProduct">{product.qty}</td></tr>))
+                const orderProducts = elem.products.map((product) => (<tr key= {product.id}><td>{product.name}</td> <td>{product.qty}</td></tr>))
                 return (
                 <div className='orderCard' key= {elem.id}>
-                    <div className='orderHeader'>
-                    <h1> Orden N° {elem.id}</h1>
-                    </div>
-                    <div className='headerData'>
-                        <div><span> Mesera: </span> {elem.userId} </div>
-                        <div><span> Cliente: </span> {elem.client}</div>
-                        <div><span>Mesa: </span> {elem.table}</div>  
-                    </div>
-                                      
-                    <table className="orderTable">
+                    <div className='orderHeader'><h1> Orden N° {elem.id}</h1></div>
+                    <p> Mesera: <span> {elem.userId}</span> </p>
+                    <p> Cliente: <span> {elem.client}</span> </p>
+                    <p> Mesa: <span> {elem.table}</span> </p>
+                    <table>
                         <tbody>
-                            <tr className= 'orderTitlesTable'>
+                            <td>
                                 <th>Producto</th>
-                                <th className="qtyProduct">Cant.</th>
-                            </tr>
+                                <th>Cant.</th>
+                            </td>
                             {orderProducts}
                         </tbody>
                     </table>
@@ -50,7 +44,7 @@ function GetOrders({orders, changeStatus}){
                 </div>
                 )
             })}
-        </Fragment>
+        </div>
     )
 }
 
