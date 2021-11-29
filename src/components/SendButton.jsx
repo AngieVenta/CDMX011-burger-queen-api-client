@@ -12,7 +12,8 @@ function SendButton ({client, table, products, setProducts,setClient}){
             'table': table,
             'products': products,
             'status': 'pending',
-            'dateEntry': new Date()
+            'dateEntry': new Date(),
+            'deliveringTime': 0
         }
         
         if(client === '' || table === '' || Object.keys(products).length === 0) {

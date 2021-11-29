@@ -3,17 +3,6 @@ import '../components/style/Style.css';
 
 function GetOrders({orders, changeStatus}){
 
-    // const changeStatus = (order) =>{
-    //     const requestOptions = {
-    //         method: 'PUT',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify( { ...order, "status": 'delivering'} )
-    //     };
-    //     fetch('http://localhost:8000/orders/' + order.id, requestOptions)
-    //         .then(response => response.json())
-                        
-    // }
-
     return (
         <Fragment>
             {orders.map((elem) => {
@@ -40,12 +29,10 @@ function GetOrders({orders, changeStatus}){
                     </table>
                     { elem.status === 'pending' ? <button 
                     className="btnGetOrder"
-                    onClick= {() =>{ changeStatus(elem);
-                    window.location.reload()}
+                    onClick= {() =>{ changeStatus(elem)}
                     } >Orden Lista</button> : <button 
                     className="btnGetOrder"
-                    onClick= {() =>{ changeStatus(elem);
-                    window.location.reload()}
+                    onClick= {() =>{ changeStatus(elem)}
                     }> Orden entregada </button> }
                 </div>
                 )

@@ -42,7 +42,7 @@
     }
 }
 
-.kitchenOrders{
+.kitchenOrders, .waitressOrders{
     background-color: #F7E7D0;
     display: flex;
     justify-content: left;
@@ -54,6 +54,7 @@
     max-height: auto;
     
 }
+
 
 .allOrders{
     display: flex;
@@ -84,7 +85,7 @@
         background: rgba(242, 107, 170, 0.81);
     }
     .headerData{
-        margin-bottom: 2vmin;
+        margin: auto 2vmin 2vmin 2vmin;
         div{
             @include fontStyle(2vmin, 600);
             align-self: flex-start;
@@ -99,7 +100,7 @@
     }
     
     .qtyProduct{
-        text-align: end;
+        text-align: center;
     }
     
     th{

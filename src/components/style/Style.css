@@ -540,7 +540,7 @@ form button {
   border-radius: 30px;
 }
 
-.kitchenOrders {
+.kitchenOrders, .waitressOrders {
   background-color: #F7E7D0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -607,7 +607,7 @@ form button {
 }
 
 .orderCard .headerData {
-  margin-bottom: 2vmin;
+  margin: auto 2vmin 2vmin 2vmin;
 }
 
 .orderCard .headerData div {
@@ -630,7 +630,7 @@ form button {
 }
 
 .orderCard .qtyProduct {
-  text-align: end;
+  text-align: center;
 }
 
 .orderCard th {
