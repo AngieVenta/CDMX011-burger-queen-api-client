@@ -3,10 +3,11 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-import SignUp from './components/SingUp'
-import LogIn from './pages/LogIn/LogIn'
+import SignUp from './components/SingUp';
+import LogIn from './pages/LogIn/LogIn';
 import Menu from "./pages/menu/Menu";
 import OrderToDeliver from "./pages/ordersToDeliver/OrdersToDeliver";
+import Kitchen from './pages/Kitchen/Kitchen';
 // import { auth } from './FirebaseConfig';
 
 // import { useNavigate } from 'react-router-dom';
@@ -18,16 +19,8 @@ function App() {
 //     } else {
 //       onNavigate('/');
 //     }
-//   });
+//   })
 
-  // const navigate = useNavigate();
-  // auth.onAuthStateChanged((user)=>{
-  //   if(user){
-  //     navigate("/menu");
-  //   }else {
-  //     navigate('/');
-  //   }
-  // })
   return (
     <Router>
       <div>
@@ -36,7 +29,7 @@ function App() {
         <Route path='register' element={<SignUp/>} />
         <Route path='menu' element={<Menu/>} />
         <Route path='orderToDeliver' element={<OrderToDeliver/>} />
-
+        <Route path='kitchen' element={<Kitchen/>} />
        </Routes>
        </div>
     </Router>

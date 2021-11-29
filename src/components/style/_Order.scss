@@ -9,7 +9,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
     border: none;
-    padding: .8vmin;
+    padding: 1.5vmin;
 }
 
 
@@ -41,7 +41,7 @@
         margin-right: 1vmin;        
     }
     input{
-        height: 3vmin;
+        height: 4vmin;
         width: 45%;
         border: 3px solid #D9A296;
         box-sizing: border-box;
@@ -54,17 +54,17 @@
         border: 3px solid #D9A296;
         border-radius: 10px;
         background:rgba(240, 249, 255, 0.5);
-        height: 3vmin;
+        height: 4vmin;
     }
 }
 
 .btnRemove ,.btnLess{
-    width: 3vmin;
+    width: 4vmin;
     background: none;
     border: none;
     margin-right: 1vmin;
     img{
-        width: 3vmin;
+        width: 4vmin;
     }
 }
 .tableOrder{
