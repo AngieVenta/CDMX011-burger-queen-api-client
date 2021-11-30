@@ -19,7 +19,7 @@ function SendButton ({client, table, products, setProducts,setClient}){
         if(client === '' || table === '' || Object.keys(products).length === 0) {
             Swal.fire('Inserta los datos necesarios')
         } else {
-            fetch('http://localhost:8000/orders', {
+            fetch('https://burger-queen-fake-server-app.herokuapp.com/orders', {
             method:'POST',
             headers:{
                 "Content-Type": "application/json"

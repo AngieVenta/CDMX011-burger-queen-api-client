@@ -18,7 +18,7 @@ function Menu (){
     const [orderClient, setOrderClient] = useState({client: '', table: ''})
 
     useEffect(() => {
-        fetch('http://localhost:8000/products')
+        fetch('https://burger-queen-fake-server-app.herokuapp.com/products')
             .then(res => {
                 return res.json();
             })
