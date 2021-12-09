@@ -32,8 +32,7 @@ function GetOrders({orders, changeStatus}){
                     onClick= {() =>{ changeStatus(elem)}
                     } >Orden Lista</button> : <button 
                     className="btnGetOrder"
-                    onClick= {() =>{ changeStatus(elem);
-                    window.location.reload()}
+                    onClick= {() =>{ changeStatus(elem)}
                     }> Orden entregada </button> }
                 </div>
                 )
@@ -43,4 +42,3 @@ function GetOrders({orders, changeStatus}){
 }
 
 export default GetOrders
-

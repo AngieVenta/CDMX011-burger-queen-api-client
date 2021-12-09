@@ -23,7 +23,7 @@ function Kitchen(){
         ordersList()
     }, [])
 
-    const changeStatus = (order) =>{
+    const changeStatus = (order) => {
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -41,13 +41,11 @@ function Kitchen(){
                 var minutes = Math.floor(diff / 60) % 60;
                 diff -= minutes * 60;
                 const seconds = Math.floor(diff) % 60
-                Swal.fire('La orden paso ' + days + 'días ' + hours + 'hrs ' + minutes + 'min ' + seconds +  "seg , en cocina")})
+                Swal.fire('La orden paso ' + days + 'días ' + hours + 'hrs ' + minutes + 'min ' + seconds +  "seg , en cocina")
+            })
                            
     }
-
-    // const filterOrders = () => {
-    //     return orders.filter((order) => order.status === orderStatus)
-    // }
+       
 
     return(
         <Fragment>
