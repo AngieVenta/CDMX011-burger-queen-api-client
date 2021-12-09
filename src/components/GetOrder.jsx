@@ -1,18 +1,7 @@
 import React, { Fragment } from 'react';
 import '../components/style/Style.css';
 
-function GetOrders({orders, changeStatus}){
-
-    // const changeStatus = (order) =>{
-    //     const requestOptions = {
-    //         method: 'PUT',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify( { ...order, "status": 'delivering'} )
-    //     };
-    //     fetch('http://localhost:8000/orders/' + order.id, requestOptions)
-    //         .then(response => response.json())
-                        
-    // }
+function GetOrders({orders, changeStatus}){ 
 
     return (
         <Fragment>

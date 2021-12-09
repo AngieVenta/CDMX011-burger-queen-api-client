@@ -6,7 +6,6 @@ import Swal from 'sweetalert2';
 
 function Kitchen(){
     const [orders, setOrders] = useState([])
-    // const [orderStatus, setOrderStatus] = useState('pending')
     
     
     const ordersList = () => {
@@ -43,14 +42,7 @@ function Kitchen(){
                 diff -= minutes * 60;
                 const seconds = Math.floor(diff) % 60
                 Swal.fire('La orden paso ' + days + 'días ' + hours + 'hrs ' + minutes + 'min ' + seconds +  "seg , en cocina")})
-        //const minutes = Math.floor((diff/1000)/60);
-        //Swal.fire('La orden paso ' + minutes + "min, en cocina")
-       /*  const horas =  Math.abs(new Date().getHours() - new Date(order.dateEntry).getHours());
-        const minutos = Math.abs(new Date().getMinutes() - new Date(order.dateEntry).getMinutes());  
-        const segundos = Math.abs(new Date().getSeconds() - new Date(order.dateEntry).getSeconds()); 
-        
-        Swal.fire('La orden paso ' + horas + 'hrs ' + minutos + 'min ' + segundos +  "seg , en cocina") */; 
-                        
+                           
     }
 
     // const filterOrders = () => {

@@ -34,10 +34,10 @@ function AdminProducts (){
         if(createName !== '' && createPrice !== ''  && createImg !== ''  && createType !== ''){
             // eslint-disable-next-line array-callback-return
             const existUser = products.map((elem) => { if( createName === elem.name) return elem.name})
-            existUser.includes(createName) ? alert('Este producto ya esta registrado') :
+            existUser.includes(createName) ? alert('Este producto ya esta registrado.') :
             saveProductInfo(createName,createPrice, createImg, createType);
         } else {            
-            Swal.fire('Ingresa todos los datos necesarios')
+            Swal.fire('Ingresa todos los datos necesarios.')
         }        
     }
 
@@ -55,7 +55,7 @@ function AdminProducts (){
                 "dataEntry": new Date()             
             })
         }).then(response => response.json())
-        .then(Swal.fire('usuario creado exitosamente'))
+        .then(Swal.fire('Usuario creado exitosamente.'))
         .then(() => getProducts())
     }
     
@@ -71,7 +71,7 @@ function AdminProducts (){
             if (result.isConfirmed) {
                 fetch('https://burger-queen-fake-server-app.herokuapp.com/products/' + product.id, {
                 method: 'DELETE'
-                }).then(Swal.fire('Empleado eliminado'))
+                }).then(Swal.fire('Empleado eliminado.'))
                 .then(() => getProducts())
             }})
     }

@@ -5,9 +5,7 @@ import GetOrders from '../../components/GetOrder';
 
 //Page for the Waitress
 function OrderToDeliver (){
-    const [orders, setOrders] = useState([])
-    // const [orderStatus, setOrderStatus] = useState('pending')
-    
+    const [orders, setOrders] = useState([])   
     
     const ordersList = () => {
         fetch('https://burger-queen-fake-server-app.herokuapp.com/orders')
