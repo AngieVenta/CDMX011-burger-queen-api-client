@@ -21,12 +21,15 @@ main{
     justify-content: space-around;
     margin-top: 12vw; 
 }
+.formRegister{
+    margin-top: 2vw; 
+}
 
 form {
     @include flexCenter();
     flex-flow: column wrap;
     h1{
-        @include fontStyle(7vh, bold);
+        @include fontStyle(5vh, bold);
         margin-bottom: 3vw;
     }
     label{
@@ -37,13 +40,16 @@ form {
         @include formStyle(#F2E088);
         margin: 2vw;
         padding: 1.5vmin;
-    }
+    }    
     button{
         @include fontStyle(2vw, bold);
         @include formStyle(#F89C2D);
         cursor: pointer;
         padding: 1.5vmin !important;
-    }  
+    } 
+    select{
+        @include formStyle(#F2E088);
+    } 
     border: 5px solid #6C5A98; 
     background-color: rgba(240, 249, 255, 0.27);
     border-radius: 50px;

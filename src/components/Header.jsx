@@ -1,29 +1,34 @@
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../FirebaseConfig';
+import React, { useEffect } from 'react';
 import logo from "../assets/Burger-Queen-logo.png";
-import { signOut } from "firebase/auth";
-import { Fragment } from 'react';
+import Cookies from 'universal-cookie/es6';
+//import { Fragment } from 'react';
 import './style/Style.css';
 
 function Header ({ children }){
     
     const navigate = useNavigate();
-    const logOut = async () => {
-        try {
-            await signOut(auth);
-            console.log('LogOut');
-            navigate("/");    
-        } catch (error) {
-            console.log(error.code);
-        }
+    const cookies = new Cookies();
+    const logOut = () => {
+        cookies.remove('id',  {path: "/"});
+        cookies.remove('name',  {path: "/"});
+        cookies.remove('email', {path: "/"});
+        cookies.remove('role', {path: "/"});
+        navigate('/');
     }
+    
+    useEffect(() => {
+        if(!cookies.get('name')){
+            navigate('/');
+        }
+    })
 
     return (
-        <Fragment>
+        <div className='header'>
             <div className= 'logoheader'><img src= {logo} alt= 'logo BurgerQueen'></img></div>
             <div>{children}</div>
             <button className='btnlogOut' onClick={logOut}>Salir</button>
-        </Fragment>
+        </div>
     )
 }
 export default Header

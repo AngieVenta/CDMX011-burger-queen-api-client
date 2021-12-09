@@ -131,7 +131,7 @@
           "qty": 1
         }
       ],
-      "status": "delivering",
+      "status": "delivered",
       "dateEntry": "2021-11-26T16:48:38.176Z",
       "deliveringTime": "2021-11-27T06:06:24.150Z",
       "id": 1
@@ -219,6 +219,29 @@
       "status": "pending",
       "dateEntry": "2021-11-26T18:54:37.971Z",
       "deliveringTime": 0,
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "email": "angie@BQ.com",
+      "password": "123456",
+      "name": "Angie",
+      "role": "chef",
+      "id": 1
+    },
+    {
+      "email": "diana@BQ.com",
+      "password": "123456",
+      "name": "Diana",
+      "role": "admin",
+      "id": 2
+    },
+    {
+      "email": "luna@BQ.com",
+      "password": "lunaluna",
+      "name": "Luna Araujo",
+      "role": "mesero",
       "id": 3
     }
   ]

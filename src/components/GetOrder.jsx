@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import '../components/style/Style.css';
 
-function GetOrders({orders, changeStatus}){
+function GetOrders({orders, changeStatus}){ 
 
     return (
         <Fragment>

@@ -5,10 +5,11 @@ import GetOrders from '../../components/GetOrder';
 import Swal from 'sweetalert2';
 
 function Kitchen(){
-    const [orders, setOrders] = useState([])  
+    const [orders, setOrders] = useState([])
+    
     
     const ordersList = () => {
-        fetch('http://localhost:8000/orders')
+        fetch('https://burger-queen-fake-server-app.herokuapp.com/orders')
             .then(res => {
                 return res.json();
             })
@@ -28,7 +29,7 @@ function Kitchen(){
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify( { ...order, "status": 'delivering', "deliveringTime":new Date()} )
         };
-        fetch('http://localhost:8000/orders/' + order.id, requestOptions)
+        fetch('https://burger-queen-fake-server-app.herokuapp.com/orders/' + order.id, requestOptions)
             .then(response => response.json())
             .then(() => ordersList())
             .then(() => {
@@ -42,6 +43,7 @@ function Kitchen(){
                 const seconds = Math.floor(diff) % 60
                 Swal.fire('La orden paso ' + days + 'días ' + hours + 'hrs ' + minutes + 'min ' + seconds +  "seg , en cocina")
             })
+                           
     }
        
 

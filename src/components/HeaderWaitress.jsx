@@ -1,26 +1,12 @@
 import { Link } from 'react-router-dom';
-//import { auth } from '../FirebaseConfig';
-//import logo from "../assets/Burger-Queen-logo.png";
-//import { signOut } from "firebase/auth";
 import { Fragment } from 'react';
 import './style/Style.css';
 import Header from './Header'
 
 const HeaderWaitress = () => {
-    //const navigate = useNavigate();
-    /* const logOut = async () => {
-        try {
-            await signOut(auth);
-            console.log('LogOut');
-            navigate("/");    
-        } catch (error) {
-            console.log(error.code);
-        }
-    } */
     return (
         <Fragment>
-            <div className="headerW">
-                {/* <div className= 'logoheader'><img src= {logo} alt= 'logo BurgerQueen'></img></div> */}
+            <div className="header">
                 <Header> 
                 <div className="btnsHeader">
                     <Link to = '/menu' className='changeRoute'>
@@ -34,8 +20,7 @@ const HeaderWaitress = () => {
                         </button>
                     </Link>
                 </div>  
-                </Header>              
-                {/* <button className='btnlogOut' onClick={logOut}>Salir</button> */}
+                </Header>
             </div>
         </Fragment>        
     )

@@ -1,36 +1,33 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment,  useState, useEffect } from 'react';
 import '../../components/style/Style.css';
 import HeaderWaitress from "../../components/HeaderWaitress";
 import GetOrders from '../../components/GetOrder';
 
 //Page for the Waitress
 function OrderToDeliver (){
-    const [orders, setOrders] = useState([])  
+    const [orders, setOrders] = useState([])   
     
     const ordersList = () => {
-        fetch('http://localhost:8000/orders')
+        fetch('https://burger-queen-fake-server-app.herokuapp.com/orders')
             .then(res => {
                 return res.json();
             })
             .then(data => {  
-                const deliveringOrders = data.filter((order) => order.status === 'delivering')             
-                setOrders(deliveringOrders);
-                console.log(deliveringOrders)                
+                const pendingOrders = data.filter((order) => order.status === 'delivering')             
+                setOrders(pendingOrders);                
             })            
-    };  
-    
+    };
     useEffect(() => {
         ordersList()
-     }, [])
-    
-    
+    }, [])
+
     const changeStatus = (order) =>{
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify( { ...order, "status": 'delivered'} )
         };
-        fetch('http://localhost:8000/orders/' + order.id, requestOptions)
+        fetch('https://burger-queen-fake-server-app.herokuapp.com/orders/' + order.id, requestOptions)
             .then(response => response.json())
             .then(() => ordersList())
     }
@@ -40,9 +37,9 @@ function OrderToDeliver (){
             <div className='menuHeader'>
                 <HeaderWaitress></HeaderWaitress>
             </div>
-            {<div className= "waitressOrders">
-                { orders && <GetOrders orders ={orders} changeStatus= {changeStatus} />}
-            </div> }
+            <div className= "waitressOrders">
+                { orders && <GetOrders orders ={orders} changeStatus= {changeStatus}/>}
+            </div>
         </Fragment>  
     )      
 }
