@@ -55,7 +55,7 @@ function AdminUsers (){
                 dateEntry: new Date(),               
             })
         }).then(response => response.json())
-        .then(Swal.fire('usuario creado exitosamente'))
+        .then(Swal.fire('Usuario creado exitosamente'))
         .then(() => getUsers())
     }
  
